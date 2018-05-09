@@ -26,9 +26,17 @@ resources下有三个子文件：
 - Textures，用来存放所有的纹理和图片
 
 
+---
+
+使用Debug | x86运行
+
+
 ## 2018-5-9 
 待完成模块：
 
 RenderModel
 RenderSkybox
 RenderShadow
+
+
+
