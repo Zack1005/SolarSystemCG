@@ -27,6 +27,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
 map<string,Model> loadModels();
+const string modelsPath = "resources/models/";
 
 // settings
 const unsigned int SCR_WIDTH = 1280;
