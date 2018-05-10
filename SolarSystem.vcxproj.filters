@@ -16,17 +16,17 @@
     <Filter Include="资源文件\Shaders">
       <UniqueIdentifier>{f7e3dabb-b5c3-468f-8c74-e290e37bef56}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件\Texture">
-      <UniqueIdentifier>{6e34a411-84c0-4740-87b8-1f49a638a370}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="资源文件\Texture\skybox">
-      <UniqueIdentifier>{d9ab7f73-f93a-49b9-81b4-7977792ecd70}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\imgui">
       <UniqueIdentifier>{cbc95d66-2792-40a0-948c-e906665881b0}</UniqueIdentifier>
     </Filter>
     <Filter Include="资源文件\Models">
       <UniqueIdentifier>{a50ac7df-98ec-406b-a3db-215c9729eff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Textures">
+      <UniqueIdentifier>{6e34a411-84c0-4740-87b8-1f49a638a370}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Textures\skybox">
+      <UniqueIdentifier>{d9ab7f73-f93a-49b9-81b4-7977792ecd70}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +72,9 @@
     <ClInclude Include="imgui\stb_truetype.h">
       <Filter>头文件\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -106,31 +109,31 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\brick.jpg">
-      <Filter>资源文件\Texture</Filter>
+      <Filter>资源文件\Textures</Filter>
     </Image>
     <Image Include="Textures\greenbox.jpg">
-      <Filter>资源文件\Texture</Filter>
+      <Filter>资源文件\Textures</Filter>
     </Image>
     <Image Include="Textures\skybox\down.BMP">
-      <Filter>资源文件\Texture\skybox</Filter>
+      <Filter>资源文件\Textures\skybox</Filter>
     </Image>
     <Image Include="Textures\skybox\east.BMP">
-      <Filter>资源文件\Texture\skybox</Filter>
+      <Filter>资源文件\Textures\skybox</Filter>
     </Image>
     <Image Include="Textures\skybox\north.BMP">
-      <Filter>资源文件\Texture\skybox</Filter>
+      <Filter>资源文件\Textures\skybox</Filter>
     </Image>
     <Image Include="Textures\skybox\RiverSide.JPG">
-      <Filter>资源文件\Texture\skybox</Filter>
+      <Filter>资源文件\Textures\skybox</Filter>
     </Image>
     <Image Include="Textures\skybox\south.BMP">
-      <Filter>资源文件\Texture\skybox</Filter>
+      <Filter>资源文件\Textures\skybox</Filter>
     </Image>
     <Image Include="Textures\skybox\up.BMP">
-      <Filter>资源文件\Texture\skybox</Filter>
+      <Filter>资源文件\Textures\skybox</Filter>
     </Image>
     <Image Include="Textures\skybox\west.BMP">
-      <Filter>资源文件\Texture\skybox</Filter>
+      <Filter>资源文件\Textures\skybox</Filter>
     </Image>
   </ItemGroup>
 </Project>

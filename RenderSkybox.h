@@ -1,3 +1,4 @@
+#pragma once
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -7,17 +8,14 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Shader.h"
-#include "Camera.h"
-#include "Model.h"
+#include "Texture.h"
 
 #include <stb_image.h>
 
 #include <iostream>
 #include <vector>
 
-unsigned int skyboxVAO;
-
-void RenderSkybox(Shader& skyboxShader) {
+void SetSkybox(unsigned int& skyboxVAO) {
 	float skyboxVertices[] = {
 		// positions          
 		-5.0f,  5.0f, -5.0f,
@@ -71,4 +69,12 @@ void RenderSkybox(Shader& skyboxShader) {
 	glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-}
+};
+
+void RenderSkybox(unsigned int& skyboxVAO, unsigned int& cubemapTexture) {
+	glBindVertexArray(skyboxVAO);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+	glDrawArrays(GL_TRIANGLES, 0, 36);
+	glBindVertexArray(0);
+};
