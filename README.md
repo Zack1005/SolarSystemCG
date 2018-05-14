@@ -21,9 +21,14 @@ resources目录结构：
 
 resources下有三个子文件：
 
-- models，用来存放模型
-- shaders，用来存放所有着色器
-- textures，用来存放所有的纹理和图片
+- Models，用来存放模型
+- Shaders，用来存放所有着色器
+- Textures，用来存放所有的纹理和图片
+
+
+---
+
+使用Debug | x86运行
 
 
 ## 2018-5-9 
@@ -32,3 +37,6 @@ resources下有三个子文件：
 RenderModel
 RenderSkybox
 RenderShadow
+
+
+

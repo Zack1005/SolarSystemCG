@@ -1,5 +1,5 @@
 #pragma once
-#include "model.h"
+#include "Model.h"
 #include "Shader.h"
 
 //planets是所有我们渲染的对象
