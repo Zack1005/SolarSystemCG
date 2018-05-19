@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MODEL_H
 #define MODEL_H
 
@@ -5,14 +6,13 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-
+#include "stb_image.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-#include "Mesh.h"
+#include "mesh.h"
 #include "Shader.h"
-#include <stb_image.h>
 
 #include <string>
 #include <fstream>

@@ -31,6 +31,7 @@ https://learnopengl.com/code_viewer_gh.php?code=src/3.model_loading/1.model_load
 
 
 行星的名字如下（按照离太阳由近到远）：
+Sun
 Mercury
 Venus
 Earth
