@@ -1,10 +1,14 @@
 #pragma once
 #include "Model.h"
 #include "Shader.h"
+#include "Camera.h"
 
-#include <glm\glm.hpp>
-#include <glm\gtc\type_ptr.hpp>
-#include <glm\gtc\matrix_transform.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc\type_ptr.hpp>
+#include <glm/gtc\matrix_transform.hpp>
+#include <GLFW/glfw3.h>
+
+
 typedef struct movingPara {//第一次迭代我们假设所有星球的运动的都是圆形，因此只需要在xz平面分别使用sin，cos函数再乘以该角速度即可。
 	float EarthW=1;//初始化地球的角速度
 	float MercuryW = EarthW *1.56 ;
@@ -46,6 +50,53 @@ Neptune
 //modelShader是你需要的着色器，Shader类的实现与教程相同
 //planets是一个map，可以根据Model的字符串名字来进行索引。
 //view是摄像机的视角矩阵，直接相乘即可。
-void RenderModels(Shader& modelShader, map<string, Model>&planets,movingPara& hps, glm::mat4& view) {
+void RenderModels(Shader& modelShader, map<string, Model>&planets,movingPara& hps, glm::mat4& view, glm::mat4& projection) {
+	modelShader.use();
+	modelShader.setMat4("projection", projection);
+	modelShader.setMat4("view", view);
+	glm::mat4 model;
+	//Sun
+	model = ModelTransform(1, 0, 0);
+	modelShader.setMat4("model", model);
+	planets["Sun"].Draw(modelShader);
+	//Mercury
+	model = ModelTransform(1, hps.MercuryW, hps.MercurySemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Mercury"].Draw(modelShader);
+	//Venus
+	model = ModelTransform(1, hps.VenusW, hps.VenusSemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Venus"].Draw(modelShader);
+	//Earth
+	model = ModelTransform(1, hps.EarthW, hps.EarthSemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Earth"].Draw(modelShader);
+	//Mars
+	model = ModelTransform(1, hps.MarsW, hps.MarsSemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Mars"].Draw(modelShader);
+	//Jupiter
+	model = ModelTransform(1, hps.JupiterW, hps.JupiterSemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Jupiter"].Draw(modelShader);
+	//Saturn
+	model = ModelTransform(1, hps.SaturnW, hps.SaturnSemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Saturn"].Draw(modelShader);
+	//Uranus
+	model = ModelTransform(1, hps.UranusW, hps.UranusSemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Uranus"].Draw(modelShader);
+	//Neptune
+	model = ModelTransform(1, hps.NeptuneW, hps.NeptuneSemidiameter);
+	modelShader.setMat4("model", model);
+	planets["Neptune"].Draw(modelShader);
+}
 
+glm::mat4 ModelTransform(float sf, float tf, float rf) {
+	glm::mat4 model;
+	model = glm::scale(model, glm::vec3(sf, sf, sf));
+	model = glm::translate(model, glm::vec3(tf, 0.0f, 0.0f));
+	model = glm::rotate(model, glm::radians((GLfloat)glfwGetTime() * rf), glm::vec3(0.0f, 1.0f, 0.0f));
+	return model;
 }

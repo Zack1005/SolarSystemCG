@@ -30,6 +30,9 @@
     <ClCompile Include="imgui\imgui_impl_glfw_gl3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="skyboxTestDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgui\imconfig.h">
@@ -80,5 +83,19 @@
     <ClInclude Include="imgui\stb_truetype.h">
       <Filter>资源文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="skybox.vs">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="skybox.fs">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="model_loading.vs">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="model_loading.fs">
+      <Filter>源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

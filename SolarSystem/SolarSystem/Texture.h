@@ -1,11 +1,11 @@
 #ifndef _TEXTURE_H_
 #define _TEXTURE_H_
-
+#define STB_IMAGE_IMPLEMENTATION
 #include <iostream>
 #include <fstream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <stb_image.h>
+#include "stb_image.h"
 #include <string>
 #include <vector>
 

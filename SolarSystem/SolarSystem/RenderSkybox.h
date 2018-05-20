@@ -15,7 +15,7 @@
 #include <iostream>
 #include <vector>
 
-void SetSkybox(unsigned int& skyboxVAO) {
+unsigned int SetSkybox(unsigned int& skyboxVAO, Shader& skyboxShader) {
 	float skyboxVertices[] = {
 		// positions          
 		-5.0f,  5.0f, -5.0f,
@@ -69,6 +69,19 @@ void SetSkybox(unsigned int& skyboxVAO) {
 	glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	vector<std::string> faces
+	{
+		"Textures/skybox/east.BMP",
+		"Textures/skybox/west.BMP",
+		"Textures/skybox/up.BMP",
+		"Textures/skybox/down.BMP",
+		"Textures/skybox/north.BMP",
+		"Textures/skybox/south.BMP",
+	};
+	unsigned int cubemapTexture = loadCubemap(faces);
+	skyboxShader.use();
+	skyboxShader.setInt("skybox", 0);
+	return cubemapTexture;
 };
 
 void RenderSkybox(unsigned int& skyboxVAO, unsigned int& cubemapTexture) {
